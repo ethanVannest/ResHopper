@@ -15,7 +15,9 @@ app.get('/', (req,res) => {
     res.send ('this works')
 })
 
-app.get('/res')
+app.get('/res', (req,res) => {
+    res.render('index.ejs')
+})
 
 app.listen (PORT, () => {
     console.log(`app is running on port, ${PORT}`)
