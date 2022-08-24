@@ -5,7 +5,9 @@ const Items = require('./models/res')
 const PORT = 3000
 const mongoURI = 'mongodb://127.0.0.1:27017/'
 const db = mongoose.connection 
-
+const methodOverride = require('method-override')
+app.use(express.urlencoded({extended:true}))
+app.use(methodOverride('_method'))
 mongoose.connect(mongoURI)
 
 mongoose.connect(mongoURI, () => {
@@ -29,6 +31,12 @@ app.get('/res/:id', (req,res) => {
         res.render('show.ejs', {
             hopItem: items
         })
+    })
+})
+//DELETE ROUTE
+app.delete('/res/:id', (req,res) => {
+    Items.findByIdAndRemove(req.params.id, (err) => {
+        res.redirect('/res')
     })
 })
 //SEED DATA

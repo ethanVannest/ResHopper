@@ -9,6 +9,9 @@
                 <a href="res/<%=hopItem[i].id %>">
                     <%= hopItem[i].name %>
                 </a>
+                <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
+                    <input id="delete" type="submit" value="Remove">
+                </form>
                 <% } %>
             </li>
     </ul>
