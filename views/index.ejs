@@ -12,6 +12,7 @@
                 <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
                     <input id="delete" type="submit" value="Remove">
                 </form>
+                <a href="/res/<%= hopItem[i].id %>/edit">edit</a>
                 <% } %>
             </li>
     </ul>

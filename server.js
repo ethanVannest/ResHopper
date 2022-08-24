@@ -8,6 +8,7 @@ const db = mongoose.connection
 const methodOverride = require('method-override')
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
+
 mongoose.connect(mongoURI)
 
 mongoose.connect(mongoURI, () => {
@@ -39,13 +40,6 @@ app.get('/res/:id', (req,res) => {
     })
 })
 
-//DELETE ROUTE
-app.delete('/res/:id', (req,res) => {
-    Items.findByIdAndRemove(req.params.id, (err) => {
-        res.redirect('/res')
-    })
-})
-
 //POST ROUTE 
 app.post('/res', (req,res) => {
     Items.create(req.body, (err, newHop) => {
@@ -53,6 +47,32 @@ app.post('/res', (req,res) => {
         res.redirect('/res')
     })
 })
+
+//DELETE ROUTE
+app.delete('/res/:id', (req,res) => {
+    Items.findByIdAndRemove(req.params.id, (err) => {
+        res.redirect('/res')
+    })
+})
+
+
+//EDIT ROUTE
+app.get('/res/:id/edit', (req,res) => {
+    Items.findById(req.params.id, (err, editItems) => {
+        res.render('edit.ejs', {
+            hopItem: editItems
+        })
+    })
+})
+
+//PUT ROUTE
+app.put('/res/:id', (req,res) => {
+    Items.findByIdAndUpdate(req.params.id, req.body, (err, edit) => {
+        edit = req.body
+        res.redirect('/res/'+ req.params.id)
+    })
+})
+
 //SEED DATA
 // const res = [
 //     {

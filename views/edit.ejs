@@ -4,6 +4,18 @@
     <%-include('../partials/head.ejs') %>
 </head>
 <body>
-    
+    <h1>Edit <%= hopItem.name %> </h1>
+    <form action="/res/<%= hopItem.id %>?_method=PUT" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="<%= hopItem.name%>">
+        <label for="price">Price</label>
+        <input type="text" name="price" value="<%= hopItem.price%>">
+        <label for="hours">Hours</label>
+        <input type="text" name="hours" value="<%= hopItem.hours%>">
+        <label for="rating">Rating</label>
+        <input type="text" name="rating" value="<%= hopItem.rating%>">
+        <label for="img">Image</label>
+        <input type="text" name="img" value="<%= hopItem.img%>">
+        <input type="submit" value="Edit Restuarant Option!">
 </body>
 </html>
