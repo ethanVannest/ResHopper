@@ -4,7 +4,7 @@ const resSchema = mongoose.Schema
 const resItems = new resSchema({
     name: String, 
     rating: Number,
-    price: Number,
+    price: String,
     type: String, 
     hours: String,
 })
