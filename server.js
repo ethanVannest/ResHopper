@@ -17,7 +17,11 @@ app.get('/', (req,res) => {
 })
 //INDEX ROUTE
 app.get('/res', (req,res) => {
-    res.render('index.ejs', Items)
+    Items.find({}, (err, items) => {
+        res.render('index.ejs', {
+            hopItem: items
+        })
+    })
 })
 
 //SEED DATA
@@ -38,6 +42,7 @@ app.get('/res', (req,res) => {
 //     }
 //     db.close()
 // })
+
 app.listen (PORT, () => {
     console.log(`app is running on port, ${PORT}`)
 })
