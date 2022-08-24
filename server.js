@@ -23,7 +23,14 @@ app.get('/res', (req,res) => {
         })
     })
 })
-
+//SHOW ROUTE
+app.get('/res/:id', (req,res) => {
+    Items.findById(req.params.id, (err, items) => {
+        res.render('show.ejs', {
+            hopItem: items
+        })
+    })
+})
 //SEED DATA
 // const res = [
 //     {
@@ -35,11 +42,11 @@ app.get('/res', (req,res) => {
 //     }
 // ]
 // Items.insertMany(res, (error, resItems) => {
-//     if (error){
-//         console.log(error)
-//     } else {
-//         console.log(resItems)
-//     }
+//      if  (error){
+//      console.log(error)
+//      } else {
+//      console.log(resItems)
+//      }
 //     db.close()
 // })
 
