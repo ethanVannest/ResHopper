@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const resSchema = mongoose.Schema
 
 const resItems = new resSchema({
-    name: String, 
+    name: String,
+    img: String, 
     rating: Number,
     price: String,
     type: String, 

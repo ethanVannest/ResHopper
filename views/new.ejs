@@ -4,6 +4,18 @@
     <%-include('../partials/head.ejs') %>
 </head>
 <body>
-    
+    <form action="/res" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name">
+        <label for="price">Price</label>
+        <input type="text" name="price">
+        <label for="hours">Hours</label>
+        <input type="text" name="hours">
+        <label for="rating">Rating</label>
+        <input type="text" name="text">
+        <label for="img">Image</label>
+        <input type="text" name="img">
+        <input type="submit" value="Create New Restuarant Option!">
+    </form>
 </body>
 </html>

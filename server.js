@@ -25,6 +25,11 @@ app.get('/res', (req,res) => {
         })
     })
 })
+//NEW ROUTE
+app.get('/res/new', (req,res) => {
+    res.render('new.ejs')
+})
+
 //SHOW ROUTE
 app.get('/res/:id', (req,res) => {
     Items.findById(req.params.id, (err, items) => {
@@ -33,9 +38,18 @@ app.get('/res/:id', (req,res) => {
         })
     })
 })
+
 //DELETE ROUTE
 app.delete('/res/:id', (req,res) => {
     Items.findByIdAndRemove(req.params.id, (err) => {
+        res.redirect('/res')
+    })
+})
+
+//POST ROUTE 
+app.post('/res', (req,res) => {
+    Items.create(req.body, (err, newHop) => {
+        newHop = req.body
         res.redirect('/res')
     })
 })
@@ -46,6 +60,7 @@ app.delete('/res/:id', (req,res) => {
 //         rating: 4,
 //         price: 'Around Twenty',
 //         type: 'Fast', 
+//         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe5l6eWFrqKGcwq2X93624LR4_pwjmvnk60Q&usqp=CAU',
 //         hours: '9-10pm',
 //     }
 // ]
