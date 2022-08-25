@@ -1,17 +1,16 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const Items = require('./models/res')
 const PORT = process.env.PORT||3000
-const mongoURI = 'mongodb://127.0.0.1:27017/'
 const db = mongoose.connection 
 const methodOverride = require('method-override')
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 
-mongoose.connect(mongoURI)
 
-mongoose.connect(mongoURI, () => {
+mongoose.connect(process.env.MONGODB_URI, () => {
     console.log('Mongoose is running')
 })
 
@@ -21,8 +20,10 @@ app.get('/', (req,res) => {
 //INDEX ROUTE
 app.get('/res', (req,res) => {
     Items.find({}, (err, items) => {
+        const randomItem = Math.floor(Math.random() * items.length)
         res.render('index.ejs', {
-            hopItem: items
+            hopItem: items, 
+            randomItem: items[randomItem]
         })
     })
 })
@@ -74,7 +75,7 @@ app.put('/res/:id', (req,res) => {
 })
 
 //SEED DATA
-// const res = [
+// const res = 
 //     {
 //         name: 'Chic-fil-A', 
 //         rating: 4,
@@ -83,15 +84,17 @@ app.put('/res/:id', (req,res) => {
 //         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe5l6eWFrqKGcwq2X93624LR4_pwjmvnk60Q&usqp=CAU',
 //         hours: '9-10pm',
 //     }
-// ]
-// Items.insertMany(res, (error, resItems) => {
-//      if  (error){
-//      console.log(error)
-//      } else {
-//      console.log(resItems)
-//      }
-//     db.close()
-// })
+// try{
+//     Items.create(res, (error, resItems) => {
+//          if  (error){
+//          console.log(error)
+//          } else {
+//          console.log(resItems)
+//          }
+//         db.close()
+//     })
+// }
+// catch(err){console.log(err)}
 
 app.listen (PORT, () => {
     console.log(`app is running on port, ${PORT}`)

@@ -9,5 +9,5 @@ const resItems = new resSchema({
     type: String, 
     hours: String,
 })
-const Items = mongoose.model('Items', resItems)
+const Items = mongoose.model('Item', resItems)
 module.exports = Items
