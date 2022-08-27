@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, () => {
 })
 
 app.get('/', (req,res) => {
-    res.send ('this work')
+    res.render ('home.ejs')
 })
 //INDEX ROUTE
 app.get('/res', (req,res) => {
