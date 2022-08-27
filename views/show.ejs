@@ -4,12 +4,12 @@
     <%-include('../partials/head.ejs') %>
 </head>
 <body>
-    <h1> <%= hopItem.name %></h1>
-    <%= hopItem.price%>
-    <%= hopItem.hours %>
-    <%= hopItem.type %>
-    <%= hopItem.rating %>
-    <%= hopItem.img %>
+    <%- include('../partials/header.ejs') %>
+    <h1> <%= hopItem.name %> Rating:<%= hopItem.rating %> </h1>
+    Price:<%= hopItem.price%>
+    Hours:<%= hopItem.hours %>
+    Type of Food:<%= hopItem.type %>
+    <img src= "<%= hopItem.img %>" alt="" srcset="">
     <a href="/res">back</a>
 </body>
 </html>

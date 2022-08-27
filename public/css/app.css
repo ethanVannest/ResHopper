@@ -52,10 +52,12 @@ li{
 #itemName {
     display: flex;
     justify-content: center;
+    padding-right: 3%;
 }
 #itemOptions{
     display: flex;
     justify-content: center;
+    padding-right: 3%;
 }
 #delete {
     background-color: #78290F;

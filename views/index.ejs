@@ -18,7 +18,10 @@
         </div>
         <ul>
             <% for (let i in hopItem) { %>
-                <li>
+            <li>
+                    <% if (hopItem.length === 0) { %>
+                        There Is No Items! Click New To Create Some!
+                        <% } %>
                     <br>
                     <div id="itemName">       
                         <a href="res/<%=hopItem[i].id %>">
