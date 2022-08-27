@@ -7,6 +7,7 @@ const PORT = process.env.PORT||3000
 const db = mongoose.connection 
 const methodOverride = require('method-override')
 app.use(express.urlencoded({extended:true}))
+app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
 
@@ -15,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, () => {
 })
 
 app.get('/', (req,res) => {
-    res.send ('this works')
+    res.send ('this work')
 })
 //INDEX ROUTE
 app.get('/res', (req,res) => {
