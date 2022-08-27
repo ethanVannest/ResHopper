@@ -1,4 +1,74 @@
 body {
-    background-color: #E0D0C1;
-    color: #A76D60;
+    background-color: #15616D;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #FFECD1;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+    color: #FFECD1;
+}
+li{
+    list-style: none;
+}
+
+#goEat {
+    border: 3px solid black;
+    font-size: 3em;
+    padding: 10px 20% 10px 20%;
+    background-color: #001524;
+    /* animation-duration: 1s; */
+    transition: .5s;
+}
+#goEat:hover{
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+}
+#goEatDiv {
+    display: flex;
+    justify-content: center;
+}
+#choices{
+    background-color: #A1683A;
+    padding: 10px;
+    margin: 10px 0 0 0;
+}
+#choicesDiv{
+    display: flex;
+    justify-content: center;
+}
+#titleDiv{
+    display: flex;
+    justify-content: center;
+    background: url("https://static2.bigstockphoto.com/7/9/2/large1500/297327124.jpg") no-repeat 50% 50%;
+    
+}
+#listItems{
+    background-color: #001524;
+}
+#itemName {
+    display: flex;
+    justify-content: center;
+}
+#itemOptions{
+    display: flex;
+    justify-content: center;
+}
+#delete {
+    background-color: #78290F;
+    color: #FFECD1;
+    border: 2px solid black;
+    cursor: pointer;
+}
+hr {
+    border: 2px solid black;
+    color: black;
+}
+h1 {
+    color: #FFECD1;
+    background-color: rgba(0,0,0,.5);
+    padding: 1%;
 }

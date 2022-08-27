@@ -4,21 +4,38 @@
       <%- include('../partials/head.ejs') %>
     </head>
 <body>
-    <h1>ResHopper</h1>
-    <a href="/res/<%= randomItem.id %>">Go Eat!</a>
-    <ul>
-        <% for (let i in hopItem) { %>
-            <li>
-                <a href="res/<%=hopItem[i].id %>">
-                    <%= hopItem[i].name %>
-                </a>
-                <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
-                    <input id="delete" type="submit" value="Remove">
-                </form>
-                <a href="/res/<%= hopItem[i].id %>/edit">edit</a>
-                <% } %>
-            </li>
-    </ul>
-    <a href="/res/new">New</a>
+    <%-include('../partials/header.ejs') %>
+    <br>
+    <div id="goEatDiv">
+        <a id="goEat" href="/res/<%= randomItem.id %>">Go Eat!</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div id="listItems">
+        <div id="choicesDiv">
+        <h2 id="choices">Your Choices!</h2>
+        </div>
+        <ul>
+            <% for (let i in hopItem) { %>
+                <li>
+                    <br>
+                    <div id="itemName">       
+                        <a href="res/<%=hopItem[i].id %>">
+                            <%= hopItem[i].name %>
+                        </a>
+                    </div>
+                    <div id="itemOptions">
+                        <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
+                            <input id="delete" type="submit" value="Remove">
+                        </form>
+                        | <a href="/res/<%= hopItem[i].id %>/edit">Edit</a>
+                        <% } %>
+                    </div>
+                    <br>
+                </li>
+            </ul>
+        </div>
+        
 </body>
 </html>
