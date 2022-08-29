@@ -167,6 +167,20 @@ input[type=text], select {
     float: right;
     
 }
+/* Home Page*/
+.StartPage{
+    border: 3px solid black;
+    font-size: 3em;
+    padding: 10px 20% 10px 20%;
+    background-color: #001524;
+}
+#StartPageDiv{
+    text-align: center;
+}
+#homeList{
+    padding: 10px;
+    align-items: center;
+}
 /* Cell Phone Accessibility */
 @media screen and (max-width: 400px) {
      .type { 
