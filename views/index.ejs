@@ -6,6 +6,7 @@
 <body>
     <%-include('../partials/header.ejs') %>
     <br>
+    <% if (itemLength >= 1) { %>
     <div id="goEatDiv">
         <a id="goEat" href="/res/<%= randomItem.id %>">Go Eat!</a>
     </div>
@@ -16,28 +17,32 @@
         <div id="choicesDiv">
         <h2 id="choices">Your Choices!</h2>
         </div>
-        <ul>
-            <% for (let i in hopItem) { %>
-            <li>
-                    <% if (hopItem.length === 0) { %>
-                        There Is No Items! Click New To Create Some!
-                        <% } %>
-                    <br>
-                    <div id="itemName">       
-                        <a href="res/<%=hopItem[i].id %>">
-                            <%= hopItem[i].name %>
-                        </a>
-                    </div>
-                    <div id="itemOptions">
-                        <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
-                            <input id="delete" type="submit" value="Remove">
-                        </form>
-                        | <a href="/res/<%= hopItem[i].id %>/edit">Edit</a>
-                        <% } %>
-                    </div>
-                    <br>
-                </li>
-            </ul>
+        
+            <ul>
+                <% for (let i in hopItem) { %>
+                    <li>
+                        <% if (hopItem.length === 0) { %>
+                            There Is No Items! Click New To Create Some!
+                            <% } %>
+                            <br>
+                            <div id="itemName">       
+                                <a href="res/<%=hopItem[i].id %>">
+                                    <%= hopItem[i].name %>
+                                    </a>
+                                    </div>
+                                    <div id="itemOptions">
+                                        <form action="/res/<%= hopItem[i].id %>?_method=delete" method="POST">
+                                            <input id="delete" type="submit" value="Remove">
+                                            </form>
+                                            | <a href="/res/<%= hopItem[i].id %>/edit">Edit</a>
+                                            <% } %>
+                                            </div>
+                                            <br>
+                                            </li>
+                                            </ul>
+                                            <%} else { %>
+                                            <p>There Is No Items! Click New To Create Some!</p>
+                                            <%}%>
         </div>
         
 </body>

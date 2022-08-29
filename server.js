@@ -22,9 +22,11 @@ app.get('/', (req,res) => {
 app.get('/res', (req,res) => {
     Items.find({}, (err, items) => {
         const randomItem = Math.floor(Math.random() * items.length)
+        const itemLength = items.length
         res.render('index.ejs', {
             hopItem: items, 
-            randomItem: items[randomItem]
+            randomItem: items[randomItem],
+            itemLength: itemLength
         })
     })
 })
