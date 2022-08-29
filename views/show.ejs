@@ -5,9 +5,13 @@
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <h1> <%= hopItem.name %> Rating:<%= hopItem.rating %> </h1>
-    <img src= "<%= hopItem.img %>" alt="" srcset="">
+    <h1>
+        <%= hopItem.name %> 
+        Rating:<%= hopItem.rating %> 
+    </h1>
+    <img src= "<%= hopItem.img %>" id="showImg" srcset="">
     Price:<%= hopItem.price%> Hours:<%= hopItem.hours %> Type of Food:<%= hopItem.type %>
-    <a href="/res">back</a>
+    <br>
+    <a id="goBack" href="/res">Back</a>
 </body>
 </html>

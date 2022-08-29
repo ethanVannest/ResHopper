@@ -4,6 +4,7 @@
     <%-include('../partials/head.ejs') %>
 </head>
 <body>
+    <%-include('../partials/header.ejs') %>
     <h1>Edit <%= hopItem.name %> </h1>
     <form action="/res/<%= hopItem.id %>?_method=PUT" method="POST">
         <label for="name">Name</label>
@@ -16,8 +17,8 @@
         <input type="text" name="rating" value="<%= hopItem.rating%>">
         <label for="img">Image</label>
         <input type="text" name="img" value="<%= hopItem.img%>">
-        <input type="submit" value="Edit Restuarant Option!">
-        
-        <a href="/res">back</a>
+        <input id="newEdit"type="submit" value="Edit Restuarant Option!">
+        <br>
+        <a id="goBack" href="/res">back</a>
 </body>
 </html>

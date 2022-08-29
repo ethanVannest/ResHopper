@@ -1,3 +1,6 @@
+/* *{
+    border: 1px solid black;
+} */
 body {
     background-color: #15616D;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -13,7 +16,7 @@ a:visited{
 li{
     list-style: none;
 }
-
+/*Index Page */
 #goEat {
     border: 3px solid black;
     font-size: 3em;
@@ -30,6 +33,9 @@ li{
 #goEatDiv {
     display: flex;
     justify-content: center;
+}
+#indexName{
+font-size: 40px;
 }
 #choices{
     background-color: #A1683A;
@@ -65,6 +71,18 @@ li{
     border: 2px solid black;
     cursor: pointer;
 }
+/*Show Page*/
+#showImg {
+max-width: 30%;
+max-height: 10%;
+}
+#goBack{
+    border: 10px;
+    border-radius: 2px;
+    padding: 3px;
+    background-color: black;
+    /* position:fixed; */
+}
 hr {
     border: 2px solid black;
     color: black;
@@ -77,4 +95,25 @@ h1 {
 p{
     display: flex;
     justify-content: center;
+}
+/*New/Edit Forms*/
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    /* box-sizing: border-box; */
+}
+#newEdit{
+    width: 30%;
+    background-color: #001524;
+    color: #FFECD1;
+    padding: 14px 20px;
+    margin: 8px 70%;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+
 }
