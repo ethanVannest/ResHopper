@@ -5,12 +5,15 @@
 </head>
 <body>
     <%- include('../partials/header.ejs') %>
-    <h1>
-        <%= hopItem.name %> 
-        Rating:<%= hopItem.rating %> 
-    </h1>
+    <div id="hopDiv">
+        <h1 id="hopName"><%= hopItem.name %></h1>  <h1 id="hopRate">Rating:<%= hopItem.rating %> </h1>
+    </div> 
     <img src= "<%= hopItem.img %>" id="showImg" srcset="">
-    Price:<%= hopItem.price%> Hours:<%= hopItem.hours %> Type of Food:<%= hopItem.type %>
+    <p id="">
+        Price:<%= hopItem.price%> 
+        Hours:<%= hopItem.hours %> 
+        Type of Food:<%= hopItem.type %>
+    </p>
     <br>
     <a id="goBack" href="/res">Back</a>
 </body>

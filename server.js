@@ -38,11 +38,14 @@ app.get('/res/new', (req,res) => {
 //SHOW ROUTE
 app.get('/res/:id', (req,res) => {
     Items.findById(req.params.id, (err, items) => {
+        // const randomItem = Math.floor(Math.random() * items.length)
         res.render('show.ejs', {
-            hopItem: items
+            hopItem: items,
+            // randomItem: items[randomItem]
         })
     })
 })
+/* <a href="/res/<%= randomItem.id %>">Show Me Another!</a>   */
 
 //POST ROUTE 
 app.post('/res', (req,res) => {
