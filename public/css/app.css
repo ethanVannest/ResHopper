@@ -8,6 +8,7 @@ body {
 }
 a{
     text-decoration: none;
+    color: #FFECD1;
 }
 a:visited{
     text-decoration: none;
@@ -24,6 +25,7 @@ li{
     background-color: #001524;
     /* animation-duration: 1s; */
     transition: .5s;
+    border-radius: 5px;
 }
 #goEat:hover{
     background-color: green;
@@ -71,30 +73,33 @@ font-size: 40px;
     border: 2px solid black;
     cursor: pointer;
 }
-/*Show Page*/
-#showImg {
-max-width: 30%;
+/* Show Page */
+ #showImg {
+max-width: 30%; 
 max-height: 10%;
 display: flex;
-margin: 0 25% 0 25% ;
+/* margin: 0 25% 0 25% ; */
 padding: 0;
+border: 10px solid #001524;
+} 
+#showImgDiv {
+    display: flex;
+    justify-content: center;
 }
 #goBack{
     border: 10px;
     border-radius: 2px;
     padding: 3px;
     background-color: black;
-    /* position:fixed; */
 }
 #hopName{
     border: 10px;
     margin: 10px;
-    padding: 10px;
+    padding: 10px 10% 10px 10%;
     font-size: 40px;
     background-color: #001524;
     display: inline-flex;
-    
-    /* justify-content: space-around; */
+    /* justify-content: center; */
 }
 #hopRate {
     display: inline;
@@ -106,11 +111,31 @@ padding: 0;
     display: inline-flex;
 }
 #hopDiv {
-    margin: 0 auto;
+    text-align: center;
+}
+#hopShowInfo {
+    /* display: inline-block; */
+    /* background-color: #001524; */
+    /* .price{margin: 0 40px}    */
+    text-align: center;
+    margin: 5%;
+    background-color: #5FBB97;
+    padding: 3%;
+    border-radius: 10px;
+}
+.price, .hours, .type {
+    /* background-color: aqua; */
+    display: inline;
+    margin: 0 2%;
+    background-color: #001524;
+    padding: 1em;
+    font-size: 2em;
+    border-radius: 5px;
 }
 hr {
     border: 2px solid black;
     color: black;
+    width: 80%;
 }
 h1 {
     color: #FFECD1;
@@ -140,5 +165,39 @@ input[type=text], select {
     border-radius: 4px;
     cursor: pointer;
     float: right;
-
+    
 }
+/* Cell Phone Accessibility */
+@media screen and (max-width: 400px) {
+     .type { 
+        display: inline;
+        margin: 0 5px;
+        background-color: #001524;
+        padding: 2%;
+        font-size: 80%;  
+   }
+   .hours {
+        display: inline;
+        margin: 0 5px;
+        background-color: #001524;
+        padding: 2%;
+        font-size: 80%;  
+   }
+   .price {
+        display: inline;
+        margin: 0 5px;
+        background-color: #001524;
+        padding: 2%;
+        font-size: 80%;  
+   }
+   #showImg {
+    max-width: 70%; 
+    max-height: 70%;
+    display: flex;
+    /* margin: 0 25% 0 25% ; */
+    padding: 0;
+    } 
+    #newEdit {
+        font-size: 6px;
+    }
+ }

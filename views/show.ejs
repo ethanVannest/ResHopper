@@ -8,12 +8,24 @@
     <div id="hopDiv">
         <h1 id="hopName"><%= hopItem.name %></h1>  <h1 id="hopRate">Rating:<%= hopItem.rating %> </h1>
     </div> 
-    <img src= "<%= hopItem.img %>" id="showImg" srcset="">
-    <p id="">
-        Price:<%= hopItem.price%> 
-        Hours:<%= hopItem.hours %> 
-        Type of Food:<%= hopItem.type %>
-    </p>
+    <br>
+    <hr>
+    <br>
+    <div id="showImgDiv">
+        <img src= "<%= hopItem.img %>" id="showImg" srcset="">
+    </div>
+
+    <div id="hopShowInfo">
+        <div class="price">
+            Price: <%= hopItem.price%> 
+        </div>
+        <div class="hours">
+            Hours: <%= hopItem.hours %> 
+        </div>    
+        <div class="type">
+            Type: <%= hopItem.type %>
+        </div>
+    </div>
     <br>
     <a id="goBack" href="/res">Back</a>
 </body>

@@ -18,6 +18,9 @@ mongoose.connect(process.env.MONGODB_URI, () => {
 app.get('/', (req,res) => {
     res.render ('home.ejs')
 })
+app.get('/res/me', (req,res) => {
+    res.render('AboutMe.ejs')
+})
 //INDEX ROUTE
 app.get('/res', (req,res) => {
     Items.find({}, (err, items) => {
